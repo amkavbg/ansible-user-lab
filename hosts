@@ -1,0 +1,6 @@
+server1.local
+server2.local
+[dev]
+server1.local
+[stage]
+server2.local

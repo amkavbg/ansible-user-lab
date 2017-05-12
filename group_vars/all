@@ -1,0 +1,38 @@
+---
+users:
+  - username: ricks
+    name: Rick Snazhez
+    groups: ['sudo', 'admin']
+    uid: 3001
+    password: $6$rUf6kRAF.n11QN$HXhEeqUYNg/nGeVYfRh/8kBsGrhhOX.IFDPuxekhSEXJGN8WUlzuQL9W/sVT7t7hVhQnz7oogUCInKEGFDc2K.
+    shell: /bin/bash
+    home: /home/sanchez
+    sudoers: true
+  - username: morty
+    name: Morty Smith
+    groups: ['users']
+    uid: 3002
+    password: $6$qOMoGDUfSCsosOa$.KGEGUTzjDPHtfq9tOvmxnHrMjPuxqvSySWwLaFMLuQQmbCqTb235Cj9sUZ3gThSPbxaDb3raS0TCgjEi1/Ie.
+    shell: /bin/sh
+    home: /var/tmp/morty
+  - username: beth
+    name: Beth Smith
+    groups: ['users']
+    uid: 3003
+    password: $6$CHtbSYp8BtkJ$rCnrIqvL9z5GouDTLOKEnpnBXh7MVFjU6u/7eO6d/UDjD3wOYIjTkAt0pOJsoTcP1umbA9cIeWAY8o1WVN49U0
+    shell: /bin/sh
+    home: /home/beth
+  - username: jerry
+    name: Jerry Smith
+    groups: ['users']
+    uid: 3004
+    password: $6$f5.Du.Ibme2UExp3$hbJB41vNG7IujdA3GdKteHUrPpYq59yXyWeOowRIcruvtawt6lBVZ9ADErq/AVrS2JbKvwc9LV4mTp3mSsxAZ0
+    shell: /bin/bash
+    home: /tmp/jerry
+  - username: summer
+    name: Summer Smith
+    groups: ['users']
+    uid: 3005
+    password: $6$jJKVWMqmwvh$sY2rg6nd0.JXBXlr37N2p1OTDe84EkZVQwJvxf0RpNGWekEJucILwTJhqAceO5CBuDd4eUwZW2467vSY6Fk940
+    shell: /bin/sh
+    home: /home/summer

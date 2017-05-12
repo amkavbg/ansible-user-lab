@@ -1,0 +1,32 @@
+---
+- name: add user
+  user:
+   name: "{{item.username}}"
+   group: "{{item.group if item.group is defined else users_group}}"
+   shell: "{{item.shell if item.shell is defined else users_default_shell}}"
+   password: "{{item.password if item.password is defined else '!'}}"
+   uid: "{{ item.uid | default(omit)}}"
+   createhome: "{{'yes'}}"	
+   home: "{{ item.home | default('/home/' + item.username)}}"
+  with_items: "{{ users }}"
+
+- name: add ssh key
+  authorized_key:
+    user: "{{ item.username }}"
+    key: "{{ lookup('file', 'files/{{item.username}}.pub') }}"
+  with_items: "{{users}}"
+
+- name: sudo install
+  package:
+   name: sudo
+   state: present
+
+- name: add user to sudoers file
+  copy:
+   content: "{{ item.username }} ALL=(ALL) NOPASSWD:ALL"
+   dest: "/etc/sudoers.d/{{ item.username }}"
+   owner: root
+   group: root
+  when: item.sudoers is defined and item.sudoers == true
+  with_items: "{{users}}"
+ 
